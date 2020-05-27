@@ -1,6 +1,4 @@
-/* Cascading stylesheet for the web page "Kitchen Blue"
-   Created by Harrison Kong
-   Copyright (C) Coursera 2020 */
+
 
    body {
     color: #5a5a5a;
@@ -139,12 +137,11 @@
     max-width: 85%;
   }
   
-  /* FOOTER
-  ------------------------- */
+ 
   
   footer {
-    /* background-color: #34699a; */
-    /* background-image: linear-gradient(to right top, #34699a, #113f67); */
+   
+   
     padding-bottom: 4rem;
     padding-top: 1rem;
     text-align: center;
@@ -155,10 +152,9 @@
     color: #becbff;
   }
   
-  /* RESPONSIVE ADJUSTMENTS
-  -------------------------------- */
+ 
   
-  /* ----- MEDIUM WIDE ----- */
+ 
   
   @media only screen and (max-width: 767px) {
   
