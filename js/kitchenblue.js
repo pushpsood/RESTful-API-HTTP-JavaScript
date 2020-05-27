@@ -1,14 +1,27 @@
+
+
+
+
+
+
+
+
 $(document).ready(function() {
     
     $("#query-form").submit(function(event) { performSearch(event); });
   });
-
+  
+  
+  
   var defunctDomains = [
     "kraftfoods.com",
     "cookeatshare.com",
     "find.myrecipes.com"
   ];
-    
+  
+  
+  
+  
   function isADefunctSite(sampleSite) {
   
     var found = false;
@@ -22,6 +35,9 @@ $(document).ready(function() {
     return found;
   
   }
+  
+  
+  
   
   function formatSearchResults(jsonResults) {
   
@@ -52,10 +68,14 @@ $(document).ready(function() {
           formatedText += "<div " + "class='dish-title-div'><a href='" + href + "' target='_blank'>" + item.title + "</a></div>";
           formatedText += "<div class='dish-ingredients-div'>Main ingredients: " + ingredient + "</div>";
         }
-      );  
+      );
+  
       
         $("#results").html(formatedText);
-    
+      
+      
+        
+      
     } 
   
   }
@@ -87,7 +107,7 @@ $(document).ready(function() {
     
   
     request = $.ajax({
-        url: "https:
+        url: "https://cors-anywhere.herokuapp.com/" + "http://www.recipepuppy.com/api/",
         type: "GET",
         data: { i: $("#ingredients").val(), q: $("#contains").val() }
     });
