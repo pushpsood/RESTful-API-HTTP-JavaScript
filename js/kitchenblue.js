@@ -62,10 +62,11 @@ $(document).ready(function() {
           // if (thumbnail == "") { thumbnail = ""; }  // Task 5, Part 3, display images/generic_dish.jpg if thumbnail is empty
   
           const href = item.href;
+          const ingredient = item.ingredients;
   
-          formatedText += "<div class='dish-image-div'><a " + " href='" + "Task 4: What should be here??" + "' target='_blank'><img class='dish-image' width='80' src='" + thumbnail + "' alt='recipe picture, link to recipe page'></a></div>";
-          formatedText += "<div " + "class='dish-title-div'><a href='" + "Task 4: What should be here??" + "' target='_blank'>" + item.title + "</a></div>";
-          formatedText += "<div class='dish-ingredients-div'>Main ingredients: " + "Task 4: What should be here??" + "</div>";
+          formatedText += "<div class='dish-image-div'><a " + " href='" + href + "' target='_blank'><img class='dish-image' width='80' src='" + thumbnail + "' alt='recipe picture, link to recipe page'></a></div>";
+          formatedText += "<div " + "class='dish-title-div'><a href='" + href + "' target='_blank'>" + item.title + "</a></div>";
+          formatedText += "<div class='dish-ingredients-div'>Main ingredients: " + ingredient + "</div>";
         }
       );
   
@@ -114,8 +115,8 @@ $(document).ready(function() {
     // Callback handler for success
   
     request.done(function (response, textStatus, jqXHR){
-        // formatSearchResults(response);  // Task 4 - uncomment
-        $("#results").html("<p>" + response + "</p>");  // Task 4 - comment out
+         formatSearchResults(response);  // Task 4 - uncomment
+        //$("#results").html("<p>" + response + "</p>");  // Task 4 - comment out
     });
   
     // Callback handler for failure
