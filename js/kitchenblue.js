@@ -44,10 +44,10 @@ $(document).ready(function() {
     var jsonObject = JSON.parse(jsonResults);
     var siteCount = 0;
   
-    // if (jsonObject.results.length == 0) { // Task 5: Part 1
-    //   setNotFoundMessages(); // Task 5: Part 1
-    // } // Task 5: Part 1
-    // else { // Task 5: Part 1
+    if (jsonObject.results.length == 0) { // Task 5: Part 1
+       setNotFoundMessages(); // Task 5: Part 1
+    } // Task 5: Part 1
+     else { // Task 5: Part 1
   
       $("#search-results-heading").text("Search Results");
       var formatedText = "";
@@ -76,7 +76,7 @@ $(document).ready(function() {
       // else { // Task 5: Part 2
         // setNotFoundMessages(); // Task 5: Part 2
       // } // Task 5: Part 2
-    // } // Task 5: Part 1
+    } // Task 5: Part 1
   
   }
   
