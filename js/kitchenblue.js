@@ -55,11 +55,11 @@ $(document).ready(function() {
       jsonObject.results.forEach(
         function(item, index) {
   
-          // if (isADefunctSite(item.href)) { return; } // Task 5: Part 2
-          // siteCount++; // Task 5: Part 2
+          if (isADefunctSite(item.href)) { return; } // Task 5: Part 2
+          siteCount++; // Task 5: Part 2
   
           var thumbnail = item.thumbnail;
-          // if (thumbnail == "") { thumbnail = ""; }  // Task 5, Part 3, display images/generic_dish.jpg if thumbnail is empty
+          if (thumbnail == "") { thumbnail = "images/generic_dish.jpg"; }  // Task 5, Part 3, display images/generic_dish.jpg if thumbnail is empty
   
           const href = item.href;
           const ingredient = item.ingredients;
@@ -109,7 +109,7 @@ $(document).ready(function() {
     request = $.ajax({
         url: "https://cors-anywhere.herokuapp.com/" + "http://www.recipepuppy.com/api/",
         type: "GET",
-        data: { i: $("#ingredients").val(), q: $("contains").val() }
+        data: { i: $("#ingredients").val(), q: $("#contains").val() }
     });
   
     // Callback handler for success
@@ -152,6 +152,10 @@ $(document).ready(function() {
     $("#ingredients").val(str);
   
     // Task 5, do the same for the field "contains"
+    var str = $("#contains").val();
+    str = str.replace(/[^a-zA-Z 0-9,]/gim, "");
+    str = str.trim();
+    $("#contains").val(str);
   }
   
   // This function disables the text fields and the two buttons
